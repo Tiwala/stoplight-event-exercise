@@ -5,50 +5,47 @@ let slowLight = document.getElementById('slowLight');
 let goButton = document.getElementById('goButton');
 let goLight = document.getElementById('goLight');
 
-var countStop = 0;
-var countSlow = 0;
-var countGo = 0;
+// var countStop = 0;
+// var countSlow = 0;
+// var countGo = 0;
 
 
 let clickRedLight = function() {
-    countStop++
-    if (countStop % 2 !== 0) {
-        stopLight.style.background = 'red';
+    // countStop++
+    stopLight.classList.toggle('stop');
+    if (stopLight.style.background === 'red') {
         console.log(`${stopButton.innerText} bulb on`);
     } else {
-        stopLight.style.background = 'black';
         console.log(`${stopButton.innerText} bulb off`);
     }
-    console.log(countStop);
+    // console.log(countStop);
 }
 
 
 stopButton.addEventListener('click', clickRedLight);
 
 let clickSlowLight = function() {
-    countSlow++
-    if (countSlow % 2 !== 0) {
-        slowLight.style.background = 'orange';
+    // countSlow++
+    slowLight.classList.toggle('slow');
+    if (slowLight.style.background === 'orange') {
         console.log(`${slowButton.innerText} bulb on`);
     } else {
-        slowLight.style.background = 'black';
         console.log(`${slowButton.innerText} bulb off`);
     }
-    console.log(countSlow);
+    // console.log(countSlow);
 }
 
 slowButton.addEventListener('click', clickSlowLight);
 
 let clickGoLight = function() {
-    countGo++
-    if (countGo % 2 !== 0) {
-        goLight.style.background = 'green';
+    // countGo++
+    goLight.classList.toggle('go');
+    if (goLight.style.background === 'green') {
         console.log(`${goButton.innerText} bulb on`);
     } else {
-        goLight.style.background = 'black';
         console.log(`${goButton.innerText} bulb off`);
     }
-    console.log(countGo);
+    // console.log(countGo);
 }
 
 goButton.addEventListener('click', clickGoLight);
